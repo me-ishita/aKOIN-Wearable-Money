@@ -84,15 +84,12 @@ export function HowItWorksVisual() {
           </div>
         </motion.div>
 
-<<<<<<< HEAD
         {/* Bottom Text */}
         <div className="text-center mt-16">
           <h3 className="text-xl sm:text-2xl font-medium">
             Control the balance, not the bank account
           </h3>
         </div>
-=======
->>>>>>> 472df3826f11c55df3e116ef1b4ba7368a6b390c
       </div>
     </section>
   );
