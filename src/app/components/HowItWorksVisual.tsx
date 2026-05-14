@@ -35,16 +35,6 @@ export function HowItWorksVisual() {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <p className="text-lg text-muted-foreground italic">
-            Control the bottomless, not the login account
-          </p>
-        </motion.div>
       </div>
     </section>
   );
