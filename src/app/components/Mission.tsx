@@ -13,7 +13,16 @@ export function Mission() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-              Our Mission: To Redefine the Transaction
+              Our Mission: {" "}
+            <span
+              style={{
+                background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              To redefine the Transaction.
+            </span>
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>

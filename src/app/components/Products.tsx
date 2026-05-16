@@ -57,7 +57,16 @@ export function Products() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Your Wallet, Your Style
+            Your Wallet, {" "}
+            <span
+              style={{
+                background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Your style.
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Choose the wearable that fits your lifestyle

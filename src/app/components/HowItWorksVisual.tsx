@@ -17,7 +17,16 @@ export function HowItWorksVisual() {
           viewport={{ once: true }}
           className="text-center mb-16" >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Control the bottomless, not the login account
+            Control the balance, {" "}
+            <span
+              style={{
+                background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Not the Bank Account.
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Seamlessly manage your finances with our intuitive app and wearable ecosystem
@@ -83,13 +92,6 @@ export function HowItWorksVisual() {
             </div>
           </div>
         </motion.div>
-
-        {/* Bottom Text */}
-        <div className="text-center mt-16">
-          <h3 className="text-xl sm:text-2xl font-medium">
-            Control the balance, not the bank account
-          </h3>
-        </div>
       </div>
     </section>
   );

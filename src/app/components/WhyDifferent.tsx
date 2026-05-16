@@ -48,7 +48,16 @@ export function WhyDifferent() {
             {/* Title */}
             <div className="relative z-10">
               <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
-                Why aKOIN <br /> Is Different
+                Why aKOIN is<br /> {" "}
+            <span
+              style={{
+                background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Different.
+            </span>
               </h2>
             </div>
           </div>

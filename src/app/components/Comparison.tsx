@@ -51,7 +51,16 @@ export function Comparison() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            How aKOIN Compares
+            How {" "}
+            <span
+              style={{
+                background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              aKOIN
+            </span> Compares.
           </h2>
           <p className="text-xl text-muted-foreground">
             See why aKOIN is the superior payment solution

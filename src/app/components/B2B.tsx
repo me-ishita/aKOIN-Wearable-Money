@@ -37,7 +37,16 @@ export function B2B() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Integrate Wearable Money
+            Integrate {" "}
+            <span
+              style={{
+                background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Wearable Money.
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Offer your customers the future of payments with our B2B platform
