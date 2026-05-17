@@ -48,7 +48,7 @@ export function WhyDifferent() {
             {/* Title */}
             <div className="relative z-10">
               <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
-                Why aKOIN is<br /> {" "}
+                Why aKoin is<br /> {" "}
             <span
               style={{
                 background: "linear-gradient(90deg, #C9A84C, #E8C97A)",

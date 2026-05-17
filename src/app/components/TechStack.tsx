@@ -68,7 +68,7 @@ export function TechStack() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              aKOIN.
+              aKoin.
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -112,3 +112,4 @@ export function TechStack() {
     </section>
   );
 }
+

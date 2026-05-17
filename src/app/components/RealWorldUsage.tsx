@@ -50,7 +50,7 @@ export function RealWorldUsage() {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            aKOIN works everywhere you need it, from your morning coffee to international travel
+            aKoin works everywhere you need it, from your morning coffee to international travel
           </p>
         </motion.div>
 
@@ -117,3 +117,4 @@ export function RealWorldUsage() {
     </section>
   );
 }
+

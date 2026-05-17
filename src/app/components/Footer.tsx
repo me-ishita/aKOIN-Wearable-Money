@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import akoinBrand from '../../assets/aKOIN_brand.png';
+import aKoinBrand from '../../assets/aKoin_brand.png';
 
 export function Footer() {
   const sections = [
@@ -24,8 +24,8 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <div className="mb-4">
               <img
-                src={akoinBrand}
-                alt="aKOIN"
+                src={aKoinBrand}
+                alt="aKoin"
                 className="h-10 w-auto"
               />
             </div>
@@ -47,7 +47,7 @@ export function Footer() {
                 {section.links.map((link) => (
                   <li key={link}>
                     <a
-                      href="#"
+                      href={link === "About" ? "#about" : "#"}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {link}
@@ -61,7 +61,7 @@ export function Footer() {
 
         <div className="border-t border-border pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground mb-4 sm:mb-0">
-            © 2026 aKOIN. All rights reserved.
+            © 2026 aKoin. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <a
@@ -82,3 +82,4 @@ export function Footer() {
     </footer>
   );
 }
+

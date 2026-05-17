@@ -54,7 +54,7 @@ const slides: Slide[] = [
     headline: "Parents & Caregivers",
     subheadline: "Complete Control, Complete Peace of Mind",
     story:
-      "Hand your child or elderly parent a sleek aKOIN ring. You load the amount, set the limits, and watch every transaction in real time — all from a single dashboard. No cash lost, no card forgotten, no surprises.",
+      "Hand your child or elderly parent a sleek aKoin ring. You load the amount, set the limits, and watch every transaction in real time — all from a single dashboard. No cash lost, no card forgotten, no surprises.",
     features: [
       "Set daily & weekly spending caps",
       "Instant transaction alerts to your phone",
@@ -85,7 +85,7 @@ const slides: Slide[] = [
     headline: "Corporate & Enterprise",
     subheadline: "HR-Controlled Spending for Every Employee",
     story:
-      "Issue aKOIN rings to your entire workforce. HR holds the master account — allocating budgets per department, per role, per event. Every coffee, cab, or client dinner is logged, categorized, and reconciled automatically.",
+      "Issue aKoin rings to your entire workforce. HR holds the master account — allocating budgets per department, per role, per event. Every coffee, cab, or client dinner is logged, categorized, and reconciled automatically.",
     features: [
       "HR dashboard with full org visibility",
       "Department-level budget allocation",
@@ -116,7 +116,7 @@ const slides: Slide[] = [
     headline: "The Phone-Free Life",
     subheadline: "Run, Swim, Train — Pay With a Tap",
     story:
-      "No pocket. No wallet. No phone. Just you and the ring. Whether you're hitting a 10K, swimming laps, or crushing a HIIT session — aKOIN moves with you. Grab a post-workout smoothie and tap your way through the day.",
+      "No pocket. No wallet. No phone. Just you and the ring. Whether you're hitting a 10K, swimming laps, or crushing a HIIT session — aKoin moves with you. Grab a post-workout smoothie and tap your way through the day.",
     features: [
       "IP68 waterproof — swim & sweat proof",
       "No battery required, ever",
@@ -294,7 +294,7 @@ export function UseCases() {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            From families to Fortune 500s — aKOIN adapts to how you live, work,
+            From families to Fortune 500s — aKoin adapts to how you live, work,
             and move.
           </p>
         </motion.div>
@@ -534,7 +534,7 @@ export function UseCases() {
                     >
                       <ImageWithFallback
                         src={ringImg}
-                        alt="aKOIN payment ring"
+                        alt="aKoin payment ring"
                         className="w-28 h-28 object-contain drop-shadow-2xl"
                       />
                     </div>
@@ -678,3 +678,4 @@ export function UseCases() {
     </section>
   );
 }
+

@@ -8,7 +8,7 @@ const steps = [
     icon: Wallet,
     title: "Load Your Account",
     description:
-      "Top up your secure aKOIN master account from any source. Quick, simple, and safe.",
+      "Top up your secure aKoin master account from any source. Quick, simple, and safe.",
   },
   {
     number: "02",
@@ -50,7 +50,7 @@ export function HowItWorks() {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Setting up your aKOIN account is simple and takes just minutes
+            Setting up your aKoin account is simple and takes just minutes
           </p>
         </motion.div>
 
@@ -80,3 +80,4 @@ export function HowItWorks() {
     </section>
   );
 }
+

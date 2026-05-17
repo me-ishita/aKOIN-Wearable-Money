@@ -4,37 +4,37 @@ import { Check, X } from "lucide-react";
 const comparisons = [
   {
     feature: "Linked to Bank Account?",
-    akoin: false,
+    aKoin: false,
     credit: true,
     phone: true,
   },
   {
     feature: "Requires Battery/Charging?",
-    akoin: false,
+    aKoin: false,
     credit: false,
     phone: true,
   },
   {
     feature: "Requires Phone to Pay?",
-    akoin: false,
+    aKoin: false,
     credit: false,
     phone: true,
   },
   {
     feature: "Waterproof?",
-    akoin: true,
+    aKoin: true,
     credit: true,
     phone: false,
   },
   {
     feature: "Instantly Freeze/Limit?",
-    akoin: true,
+    aKoin: true,
     credit: false,
     phone: true,
   },
   {
     feature: "Multi-Currency Support?",
-    akoin: true,
+    aKoin: true,
     credit: false,
     phone: false,
   },
@@ -59,11 +59,11 @@ export function Comparison() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              aKOIN
+              aKoin
             </span> Compares.
           </h2>
           <p className="text-xl text-muted-foreground">
-            See why aKOIN is the superior payment solution
+            See why aKoin is the superior payment solution
           </p>
         </motion.div>
 
@@ -78,7 +78,7 @@ export function Comparison() {
               <thead className="bg-gradient-to-r from-muted/50 to-muted/30 backdrop-blur-sm">
                 <tr>
                   <th className="text-left p-6 font-semibold text-lg">Feature</th>
-                  <th className="p-6 font-semibold text-lg">aKOIN</th>
+                  <th className="p-6 font-semibold text-lg">aKoin</th>
                   <th className="p-6 font-semibold text-lg text-muted-foreground">
                     Credit/Debit
                   </th>
@@ -99,7 +99,7 @@ export function Comparison() {
                   >
                     <td className="p-6 font-medium">{row.feature}</td>
                     <td className="p-6 text-center">
-                      {row.akoin ? (
+                      {row.aKoin ? (
                         <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-green-500/20 to-green-500/10 shadow-lg">
                           <Check className="w-5 h-5 text-green-600 dark:text-green-400" />
                         </div>
@@ -141,3 +141,4 @@ export function Comparison() {
     </section>
   );
 }
+

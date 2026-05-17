@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { ThemeProvider } from "./providers/ThemeProvider";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { SmoothScroll } from "./components/SmoothScroll";
@@ -12,12 +13,28 @@ import { WhyDifferent } from "./components/WhyDifferent";
 import { UseCases } from "./components/UseCases";
 import { Comparison } from "./components/Comparison";
 import { TechStack } from "./components/TechStack";
-import { Mission } from "./components/Mission";
+import { About } from "./components/About";
 import { B2B } from "./components/B2B";
 import { CTA } from "./components/CTA";
 import { Footer } from "./components/Footer";
 
 export default function App() {
+  const [route, setRoute] = useState("home");
+
+  useEffect(() => {
+    const resolveRoute = () => {
+      const hash = window.location.hash.toLowerCase().replace(/^#\/?/, "");
+      return hash.startsWith("about") ? "about" : "home";
+    };
+
+    setRoute(resolveRoute());
+
+    const handleHashChange = () => setRoute(resolveRoute());
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
   return (
 
     <ThemeProvider>
@@ -26,19 +43,24 @@ export default function App() {
         <SmoothScroll />
         <Navigation />
         <main>
-          <Hero />
-          <HowItWorks />
-          <UseCases />
-          <HowItWorksVisual />
-          <Products />
-          <Features />
-          <WhyDifferent />
-          <RealWorldUsage />
-          <TechStack />
-          <Comparison />
-          <Mission />
-          <B2B />
-          <CTA />
+          {route === "home" ? (
+            <>
+              <Hero />
+              <HowItWorks />
+              <UseCases />
+              <HowItWorksVisual />
+              <Products />
+              <Features />
+              <WhyDifferent />
+              <RealWorldUsage />
+              <TechStack />
+              <Comparison />
+              <B2B />
+              <CTA />
+            </>
+          ) : (
+            <About />
+          )}
         </main>
         <Footer />
       </div>

@@ -1,21 +1,35 @@
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "./ui/button";
-import akoinBrand from '../../assets/aKOIN_brand.png';
+import aKoinBrand from '../../assets/aKoin_brand.png';
 
 export function Navigation() {
   const { theme, setTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
+    { name: "Home", href: "#" },
+    { name: "About Us", href: "#about" },
     { name: "Products", href: "#products" },
     { name: "Features", href: "#features" },
     { name: "Security", href: "#security" },
     { name: "B2B", href: "#b2b" },
     { name: "Contact", href: "#contact" },
   ];
+
+  const handleNavClick = (href: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+    if (href === "#about") {
+      event.preventDefault();
+      window.location.hash = "about";
+    }
+
+    if (href === "#") {
+      event.preventDefault();
+      window.location.hash = "";
+    }
+  };
 
   return (
     <motion.nav
@@ -33,8 +47,8 @@ export function Navigation() {
             className="flex items-center"
           >
             <img
-              src={akoinBrand}
-              alt="aKOIN"
+              src={aKoinBrand}
+              alt="aKoin"
               className="h-14 w-auto object-contain"
             />
           </motion.div>
@@ -44,6 +58,7 @@ export function Navigation() {
               <motion.a
                 key={item.name}
                 href={item.href}
+                onClick={handleNavClick(item.href)}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * i }}
@@ -99,7 +114,10 @@ export function Navigation() {
                   key={item.name}
                   href={item.href}
                   className="block py-2 text-sm hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(event) => {
+                    setMobileMenuOpen(false);
+                    handleNavClick(item.href)(event as MouseEvent<HTMLAnchorElement>);
+                  }}
                 >
                   {item.name}
                 </a>
@@ -112,3 +130,4 @@ export function Navigation() {
     </motion.nav>
   );
 }
+

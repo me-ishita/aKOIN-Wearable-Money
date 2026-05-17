@@ -4,25 +4,28 @@ const logos = ["TechCrunch", "Forbes", "Wired", "Fast Company", "Bloomberg"];
 
 export function Mission() {
   return (
-    <section id="security" className="py-24 bg-background">
+    <section id="about" className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
+            <p className="text-sm uppercase tracking-[0.3em] text-primary mb-4">
+              About Us
+            </p>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Our Mission: {" "}
-            <span
-              style={{
-                background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              To redefine the Transaction.
-            </span>
+              <span
+                style={{
+                  background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                To redefine the Transaction.
+              </span>
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
@@ -32,14 +35,49 @@ export function Mission() {
                 payment layer.
               </p>
               <p>
-                aKOIN is decoupled from legacy bank infrastructure and built for
+                aKoin is decoupled from legacy bank infrastructure and built for
                 the security and convenience of the modern global citizen.
               </p>
               <p>
                 Founded by industry veterans from fintech, cybersecurity, and
-                global-scale systems transformation, aKOIN is engineered to be
+                global-scale systems transformation, aKoin is engineered to be
                 the new standard in payment security and convenience.
               </p>
+              <p>
+                Our approach is not simply about improving payments — it is about
+                rewriting how trust, privacy, and speed are delivered on every
+                transaction.
+              </p>
+            </div>
+
+            <div className="mt-12 rounded-3xl border border-border bg-muted/60 p-8 shadow-xl">
+              <h3 className="text-3xl font-semibold mb-4">
+                Our Vision for a Decoupled World
+              </h3>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  aKoin is more than a product. It's a new, more resilient
+                  global payment infrastructure designed for the realities of a
+                  digital-first world.
+                </p>
+                <p>
+                  Our vision is to create a secure ecosystem where your money is
+                  simple to use, safe to carry, and smart enough to manage
+                  itself. By separating the "act of paying" from your "core
+                  bank account", we are building the financial firewall that
+                  consumers and businesses have needed for decades.
+                </p>
+                <p>
+                  This ecosystem empowers people to transact with confidence,
+                  while preserving the privacy and flexibility that modern
+                  finance demands.
+                </p>
+                <p>
+                  Founded by industry veterans from FinTech, Cybersecurity, and
+                  global-scale systems transformation, aKoin is engineered to be
+                  the new standard in payment security and convenience.
+                </p>
+              </div>
             </div>
           </motion.div>
 
@@ -47,34 +85,37 @@ export function Mission() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative aspect-square rounded-3xl bg-gradient-to-br from-muted to-muted/50 border border-border overflow-hidden"
+            className="relative aspect-[4/5] rounded-3xl bg-gradient-to-br from-muted to-muted/50 border border-border overflow-hidden shadow-2xl"
           >
-            <div className="absolute inset-0 flex items-center justify-center">
-              <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 180, 360],
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-                className="w-64 h-64 rounded-full border-2 border-primary/20"
-              />
-              <motion.div
-                animate={{
-                  scale: [1, 0.8, 1],
-                  rotate: [360, 180, 0],
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-                className="absolute w-48 h-48 rounded-full border-2 border-primary/30"
-              />
-              <div className="absolute w-16 h-16 rounded-full bg-primary" />
+            <div className="absolute inset-0 flex flex-col justify-between p-10">
+              <div className="space-y-4">
+                <div className="h-20 w-20 rounded-3xl bg-primary/20 blur-xl" />
+                <div className="space-y-2">
+                  <div className="h-4 w-24 rounded-full bg-primary/60" />
+                  <div className="h-4 w-32 rounded-full bg-primary/40" />
+                </div>
+              </div>
+
+              <div className="grid gap-4">
+                <div className="rounded-3xl bg-background/80 p-6 border border-border shadow-inner">
+                  <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground mb-3">
+                    Purpose built
+                  </p>
+                  <p className="text-lg font-semibold text-foreground">
+                    Built for modern citizens who expect payments to be private,
+                    fast, and frictionless.
+                  </p>
+                </div>
+                <div className="rounded-3xl bg-background/90 p-6 border border-border shadow-inner">
+                  <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground mb-3">
+                    Built for trust
+                  </p>
+                  <p className="text-lg font-semibold text-foreground">
+                    Designed to protect your core identity while making every
+                    transaction safer.
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -107,3 +148,4 @@ export function Mission() {
     </section>
   );
 }
+
