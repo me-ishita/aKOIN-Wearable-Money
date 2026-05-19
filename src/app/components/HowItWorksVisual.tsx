@@ -1,8 +1,9 @@
 import work1 from "../../assets/work1.png";
 import work2 from "../../assets/work2.png";
 import work3 from "../../assets/work3.png";
-import work4 from "../../assets/work4.png";
+import work4 from "../../assets/Ring-preview.png";
 import work5 from "../../assets/work5.png";
+import keychain from "../../assets/Keychain-preview.png";
 
 import { motion } from "motion/react";
 
@@ -41,7 +42,7 @@ export function HowItWorksVisual() {
         >
           {/* Background wrapper */}
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-border/50 bg-gradient-to-br from-muted/50 to-background p-8 sm:p-10">
-            
+
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
 
             {/* FLOW */}
@@ -72,23 +73,73 @@ export function HowItWorksVisual() {
                 width="w-[140px]"
               />
 
-              <Arrow />
+              {/* SPLIT ARROW SECTION */}
+              <div className="hidden lg:flex items-center relative px-2">
+                <div className="relative w-16 h-24">
 
-              {/* RING */}
-              <Step
-                img={work4}
-                label={
-                  <>
-                    Attach to a <br /> Wearable
-                  </>
-                }
-                width="w-[130px]"
-              />
+                  {/* MAIN CENTER LINE */}
+                  <div className="absolute left-0 top-1/2 w-8 h-[2px] bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600" />
 
-              <Arrow />
+                  {/* UPPER ARROW */}
+                  <div className="absolute left-7 top-1/2 w-10 h-[2px] bg-yellow-500 rotate-[-35deg] origin-left">
 
-              {/* POS */}
-              <Step img={work5} label="Tap to Pay" width="w-[130px]" />
+                    {/* Arrow Head */}
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2">
+                      <div className="w-2 h-[2px] bg-yellow-500 rotate-45 origin-right" />
+                      <div className="w-2 h-[2px] bg-yellow-500 -rotate-45 origin-right -mt-[2px]" />
+                    </div>
+                  </div>
+
+                  {/* LOWER ARROW */}
+                  <div className="absolute left-7 top-1/2 w-10 h-[2px] bg-yellow-500 rotate-[35deg] origin-left">
+
+                    {/* Arrow Head */}
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2">
+                      <div className="w-2 h-[2px] bg-yellow-500 rotate-45 origin-right" />
+                      <div className="w-2 h-[2px] bg-yellow-500 -rotate-45 origin-right -mt-[2px]" />
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              {/* WEARABLES */}
+              <div className="flex items-center gap-8">
+
+                <div className="flex flex-col gap-10">
+
+                  {/* PERSONAL */}
+                  <div className="flex items-center gap-4">
+                    <Step
+                      img={work4}
+                      label={
+                        <>
+                          Personal <br /> Ring
+                        </>
+                      }
+                      width="w-[130px]"
+                    />
+                  </div>
+
+                  {/* BUSINESS */}
+                  <div className="flex items-center gap-4">
+                    <Step
+                      img={keychain}
+                      label={
+                        <>
+                          Business <br /> Keychain
+                        </>
+                      }
+                      width="w-[130px]"
+                    />
+                  </div>
+                </div>
+
+                <Arrow />
+
+                <Step img={work5} label="Tap to Pay" width="w-[130px]" />
+              </div>
+
             </div>
           </div>
         </motion.div>
@@ -114,7 +165,7 @@ function Arrow() {
   return (
     <div className="hidden lg:flex items-center justify-center px-1">
       <div className="relative w-12 h-[2px] bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600">
-        
+
         {/* Arrow head */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2">
           <div className="w-2 h-[2px] bg-yellow-500 rotate-45 origin-right" />

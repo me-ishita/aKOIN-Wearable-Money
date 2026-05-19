@@ -2,26 +2,31 @@ import { motion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Check } from "lucide-react";
 
+import groceryImg from "../../assets/grocery-demo.png";
+import airportImg from "../../assets/airport-demo.png";
+import coffeeImg from "../../assets/coffee-demo.png";
+import metroImg from "../../assets/metro-demo.png";
+
 const usageScenarios = [
   {
     title: "Retail Shopping",
     description: "Quick, contactless payments at your favorite stores",
-    image: "https://images.unsplash.com/photo-1647427017067-8f33ccbae493?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: groceryImg,
   },
   {
     title: "Coffee Shops & Cafes",
     description: "Start your day without reaching for your wallet",
-    image: "https://images.unsplash.com/photo-1654263937079-f63a3ea4d48b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: coffeeImg,
   },
   {
     title: "Transit & Travel",
     description: "Seamless payments at ticket counters and terminals",
-    image: "https://images.unsplash.com/photo-1775751678032-216d96fc26ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: metroImg,
   },
   {
-    title: "Hotels & Restaurants",
-    description: "Premium service with just a tap of your wearable",
-    image: "https://images.unsplash.com/photo-1772734645633-5bfbbb87da88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    title: "Hotels & Airports",
+    description: "Premium experiences with frictionless wearable payments",
+    image: airportImg,
   },
 ];
 
@@ -65,7 +70,7 @@ export function RealWorldUsage() {
               className="group relative"
             >
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-muted border-2 border-border/50 shadow-xl group-hover:shadow-2xl transition-all duration-500">
-                <ImageWithFallback
+                <img
                   src={scenario.image}
                   alt={scenario.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"

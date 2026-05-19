@@ -16,9 +16,6 @@ import {
   Lock,
   TrendingUp,
 } from "lucide-react";
-import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
-import ringImg from "../../assets/work4.png";
-
 const SLIDE_DURATION = 6000;
 
 interface FlowStep {
@@ -74,7 +71,7 @@ const slides: Slide[] = [
       { icon: Eye, label: "Parent gets alert" },
     ],
     bgPhoto:
-      "https://images.unsplash.com/photo-1577896849786-738ed6c78bd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+      "https://images.unsplash.com/photo-1577897113292-3b95936e5206?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhbWlseSUyMGF0JTIwaG9tZXxlbnwwfHwwfHx8MA%3D%3D",
     accentGradient: "from-amber-500/20 via-yellow-400/10 to-transparent",
     badgeText: "For Families",
   },

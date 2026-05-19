@@ -64,30 +64,6 @@ export function B2B() {
             </MetallicCard>
           ))}
         </div>
-
-        <div className="max-w-2xl mx-auto">
-          <MetallicCard delay={0.4}>
-            <h3 className="text-2xl font-semibold mb-2">Let's Talk Partnerships</h3>
-            <p className="text-muted-foreground mb-6">
-              Our team is ready to design a custom solution for your business
-            </p>
-
-            <form className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <Input placeholder="Full Name" className="bg-background/50" />
-                <Input placeholder="Company Name" className="bg-background/50" />
-              </div>
-              <Input type="email" placeholder="Work Email" className="bg-background/50" />
-              <Input type="tel" placeholder="Phone Number (Optional)" className="bg-background/50" />
-              <Textarea
-                placeholder="How can we help? Tell us about your project or use case..."
-                rows={4}
-                className="bg-background/50"
-              />
-              <Button className="w-full" size="lg">Submit Inquiry</Button>
-            </form>
-          </MetallicCard>
-        </div>
       </div>
     </section>
   );

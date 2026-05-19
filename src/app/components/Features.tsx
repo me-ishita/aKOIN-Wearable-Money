@@ -1,4 +1,6 @@
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
+
 import {
   Shield,
   Smartphone,
@@ -10,7 +12,10 @@ import {
   Wallet,
 } from "lucide-react";
 import { MetallicCard } from "./MetallicCard";
-import ringImg from "../../assets/work4.png";
+import ringImg from "../../assets/Ring-preview.png";
+import keyImg from "../../assets/Keychain-preview.png";
+import braceletImg from "../../assets/Bracelet-preview.png";
+
 
 const features = [
   {
@@ -62,11 +67,23 @@ const features = [
       "Tap and go in under a second. Faster than pulling out your phone or card.",
   },
 ];
+const wearableImages = [ringImg, keyImg, braceletImg];
 
 const RADIUS_X = 500;
 const RADIUS_Y = 320;
 
 export function Features() {
+
+  const [activeImage, setActiveImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImage((prev) => (prev + 1) % wearableImages.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="features"
@@ -87,7 +104,7 @@ export function Features() {
           className="text-center mb-24"
         >
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-           Effortless Payments with{" "}
+            Effortless Payments with{" "}
             <span
               style={{
                 background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
@@ -162,7 +179,10 @@ export function Features() {
                       {/* CARD GLOW */}
                       <div className="absolute inset-0 rounded-[32px] bg-primary/10 blur-2xl opacity-70 scale-90" />
 
-                      <MetallicCard delay={index * 0.05}>
+                      <MetallicCard
+                        delay={index * 0.05}
+                        golden={index % 2 !== 0}
+                      >
                         <div className="relative w-[240px] h-[240px] p-6 flex flex-col">
 
                           {/* ICON */}
@@ -189,57 +209,79 @@ export function Features() {
 
             {/* CENTER RING */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.7 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
-            >
+      initial={{ opacity: 0, scale: 0.7 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6 }}
+      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
+    >
 
-              {/* OUTER GLOW */}
-              <motion.div
-                animate={{
-                  scale: [1, 1.12, 1],
-                  opacity: [0.4, 0.7, 0.4],
-                }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 4,
-                  ease: "easeInOut",
-                }}
-                className="absolute inset-0 w-72 h-72 rounded-full bg-primary/15 blur-3xl"
-              />
+      {/* OUTER GLOW */}
+      <motion.div
+        animate={{
+          scale: [1, 1.12, 1],
+          opacity: [0.4, 0.7, 0.4],
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 4,
+          ease: "easeInOut",
+        }}
+        className="absolute inset-0 w-72 h-72 rounded-full bg-primary/15 blur-3xl"
+      />
 
-              {/* RING CONTAINER */}
-              <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 4,
-                  ease: "easeInOut",
-                }}
-                className="relative w-56 h-56 flex items-center justify-center rounded-full border border-border/50 bg-gradient-to-br from-muted/40 to-background shadow-2xl backdrop-blur-xl"
-              >
+      {/* MAIN CONTAINER */}
+      <motion.div
+        animate={{
+          y: [0, -10, 0],
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 4,
+          ease: "easeInOut",
+        }}
+        className="
+          relative w-56 h-56
+          flex items-center justify-center
+          rounded-full border border-border/50
+          bg-gradient-to-br from-muted/40 to-background
+          shadow-2xl backdrop-blur-xl overflow-hidden
+        "
+      >
 
-                {/* INNER RING GLOW */}
-                <div className="absolute inset-0 rounded-full border border-primary/20 shadow-[0_0_60px_rgba(255,255,255,0.15)]" />
+        {/* INNER RING */}
+        <div className="absolute inset-0 rounded-full border border-primary/20 shadow-[0_0_60px_rgba(255,255,255,0.15)]" />
 
-                <motion.img
-                  src={ringImg}
-                  alt="Ring"
-                  className="w-36 h-36 object-contain drop-shadow-2xl"
-                  animate={{
-                    rotate: [0, 6, -6, 0],
-                  }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 6,
-                    ease: "easeInOut",
-                  }}
-                />
-              </motion.div>
-            </motion.div>
+        {/* IMAGE SWITCH */}
+        <motion.img
+          key={activeImage}
+          src={wearableImages[activeImage]}
+          alt="Wearable Device"
+          initial={{
+            opacity: 0,
+            scale: 0.8,
+            rotate: -10,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            rotate: 0,
+          }}
+          exit={{
+            opacity: 0,
+            scale: 0.8,
+          }}
+          transition={{
+            duration: 0.7,
+            ease: "easeOut",
+          }}
+          className="
+            w-36 h-36 object-contain
+            drop-shadow-[0_0_35px_rgba(255,255,255,0.35)]
+          "
+        />
+      </motion.div>
+    </motion.div>
+
 
           </div>
         </div>

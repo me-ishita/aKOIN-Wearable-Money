@@ -1,6 +1,9 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import ring from "../../assets/Ring.png";
+import bracelet from "../../assets/Bracelet.png";
+import keychain from "../../assets/Keychain.png";
 
 const products = [
   {
@@ -14,7 +17,7 @@ const products = [
       "Premium materials",
       "Perfect for active lifestyle",
     ],
-    image: "https://images.unsplash.com/photo-1758577515333-e71b713059f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: ring,
   },
   {
     id: "bracelet",
@@ -27,7 +30,7 @@ const products = [
       "Sport-ready design",
       "Fashion meets function",
     ],
-    image: "https://images.unsplash.com/photo-1572470705436-60e19c995ca1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: bracelet,
   },
   {
     id: "keychain",
@@ -40,7 +43,7 @@ const products = [
       "Durable construction",
       "Always with you",
     ],
-    image: "https://images.unsplash.com/photo-1744697311586-52d32d9c1974?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: keychain,
   },
 ];
 

@@ -47,16 +47,41 @@ export function Hero() {
           </motion.h1>
 
           {/* SUBTEXT */}
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed"
+            className="flex flex-col items-center space-y-3"
           >
-            Not linked to your bank or UPI. Pay with a simple tap of your ring,
-            bracelet, or keychain. Access your money anywhere, anytime.
-          </motion.p>
+            {/* First Line */}
+            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
+              Make payment anywhere, anytime with a simple tap.
+            </p>
 
+            {/* Highlight Line */}
+            <div
+              className="text-lg md:text-xl font-semibold tracking-wide px-6 py-2 rounded-full border border-[#C9A84C]/30 backdrop-blur-md"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(201,168,76,0.12), rgba(232,201,122,0.08))",
+                boxShadow: "0 0 25px rgba(201,168,76,0.15)",
+              }}
+            >
+              <span className="text-white/90">
+                Choose Your Smart Wearable —
+              </span>{" "}
+              <span
+                style={{
+                  background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+                className="font-bold"
+              >
+                Free with aKoin.
+              </span>
+            </div>
+          </motion.div>
           {/* BUTTONS */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -64,18 +89,34 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
+            {/* Get Started Button */}
             <Button
               size="lg"
-              className="group bg-white text-black hover:bg-white/90"
+              className="
+      group
+      bg-black text-white
+      dark:bg-white dark:text-black
+      hover:opacity-90
+      transition-all duration-300
+      shadow-lg
+    "
             >
               Get Started
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
 
+            {/* Watch Demo Button */}
             <Button
               size="lg"
               variant="outline"
-              className="group border-white/30 text-white hover:bg-white/10"
+              className="
+      group
+      border-black/20 text-black
+      hover:bg-black/5
+      dark:border-white/30 dark:text-white
+      dark:hover:bg-white/10
+      transition-all duration-300
+    "
             >
               <Play className="mr-2 h-4 w-4" />
               Watch Demo
