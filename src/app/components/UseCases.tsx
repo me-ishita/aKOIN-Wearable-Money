@@ -16,7 +16,6 @@ import {
   Lock,
   TrendingUp,
 } from "lucide-react";
-const SLIDE_DURATION = 6000;
 
 interface FlowStep {
   icon: React.ElementType;
@@ -70,8 +69,7 @@ const slides: Slide[] = [
       { icon: Zap, label: "Child taps to pay" },
       { icon: Eye, label: "Parent gets alert" },
     ],
-    bgPhoto:
-      "https://images.unsplash.com/photo-1577897113292-3b95936e5206?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhbWlseSUyMGF0JTIwaG9tZXxlbnwwfHwwfHx8MA%3D%3D",
+    bgPhoto:"https://media.istockphoto.com/id/1214665301/photo/for-them-every-moment-is-fun.jpg?b=1&s=612x612&w=0&k=20&c=Dns3lfcdUnmRedDaeXA2XbtCC7uaWigBZg0mPdiXylI=",
     accentGradient: "from-amber-500/20 via-yellow-400/10 to-transparent",
     badgeText: "For Families",
   },
@@ -247,21 +245,7 @@ export function UseCases() {
     setProgress(0);
   }, []);
 
-  // Auto-advance
-  useEffect(() => {
-    if (isHovered) return;
-    const interval = setInterval(() => {
-      setProgress((p) => {
-        if (p >= 100) {
-          next();
-          return 0;
-        }
-        return p + (100 / (SLIDE_DURATION / 80));
-      });
-    }, 80);
-    return () => clearInterval(interval);
-  }, [isHovered, next]);
-
+ 
   const slide = slides[current];
 
   return (
@@ -282,7 +266,7 @@ export function UseCases() {
             One Ring.{" "}
             <span
               style={{
-                background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
+                background: "linear-gradient(90deg,#D4AF37, #C89B2C)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}

@@ -21,7 +21,7 @@ export function HowItWorksVisual() {
             Control the balance, {" "}
             <span
               style={{
-                background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
+                background: "linear-gradient(90deg,#D4AF37, #C89B2C)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
@@ -73,30 +73,33 @@ export function HowItWorksVisual() {
                 width="w-[140px]"
               />
 
-              {/* SPLIT ARROW SECTION */}
-              <div className="hidden lg:flex items-center relative px-2">
-                <div className="relative w-16 h-24">
+              {/* SPLIT ARROWS */}
+              <div className="hidden lg:flex items-center relative px-4">
+                <div className="relative w-24 h-40">
 
-                  {/* MAIN CENTER LINE */}
-                  <div className="absolute left-0 top-1/2 w-8 h-[2px] bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600" />
+                  {/* TOP ARROW → RING */}
+                  <div className="absolute left-0 top-10">
+                    <div className="relative w-14 h-[2px] bg-yellow-500 rotate-[-28deg] origin-left">
 
-                  {/* UPPER ARROW */}
-                  <div className="absolute left-7 top-1/2 w-10 h-[2px] bg-yellow-500 rotate-[-35deg] origin-left">
+                      {/* Arrow Head */}
+                      <div className="absolute right-0 top-1/2 -translate-y-1/2">
+                        <div className="w-3 h-[2px] bg-yellow-500 rotate-45 origin-right" />
+                        <div className="w-3 h-[2px] bg-yellow-500 -rotate-45 origin-right -mt-[2px]" />
+                      </div>
 
-                    {/* Arrow Head */}
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2">
-                      <div className="w-2 h-[2px] bg-yellow-500 rotate-45 origin-right" />
-                      <div className="w-2 h-[2px] bg-yellow-500 -rotate-45 origin-right -mt-[2px]" />
                     </div>
                   </div>
 
-                  {/* LOWER ARROW */}
-                  <div className="absolute left-7 top-1/2 w-10 h-[2px] bg-yellow-500 rotate-[35deg] origin-left">
+                  {/* BOTTOM ARROW → KEYCHAIN */}
+                  <div className="absolute left-0 bottom-10">
+                    <div className="relative w-14 h-[2px] bg-yellow-500 rotate-[28deg] origin-left">
 
-                    {/* Arrow Head */}
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2">
-                      <div className="w-2 h-[2px] bg-yellow-500 rotate-45 origin-right" />
-                      <div className="w-2 h-[2px] bg-yellow-500 -rotate-45 origin-right -mt-[2px]" />
+                      {/* Arrow Head */}
+                      <div className="absolute right-0 top-1/2 -translate-y-1/2">
+                        <div className="w-3 h-[2px] bg-yellow-500 rotate-45 origin-right" />
+                        <div className="w-3 h-[2px] bg-yellow-500 -rotate-45 origin-right -mt-[2px]" />
+                      </div>
+
                     </div>
                   </div>
 
@@ -114,7 +117,7 @@ export function HowItWorksVisual() {
                       img={work4}
                       label={
                         <>
-                          Personal <br /> Ring
+                          Wearable
                         </>
                       }
                       width="w-[130px]"
@@ -127,7 +130,7 @@ export function HowItWorksVisual() {
                       img={keychain}
                       label={
                         <>
-                          Business <br /> Keychain
+                          Wearable
                         </>
                       }
                       width="w-[130px]"

@@ -16,7 +16,6 @@ import ringImg from "../../assets/Ring-preview.png";
 import keyImg from "../../assets/Keychain-preview.png";
 import braceletImg from "../../assets/Bracelet-preview.png";
 
-
 const features = [
   {
     icon: Shield,
@@ -107,7 +106,7 @@ export function Features() {
             Effortless Payments with{" "}
             <span
               style={{
-                background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
+                background: "linear-gradient(90deg,#D4AF37, #C89B2C)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}

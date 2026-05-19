@@ -124,7 +124,7 @@ export function PersonnelPage() {
               <span
                 style={{
                   background:
-                    "linear-gradient(90deg,#D4AF37,#F6E27A,#C89B2C)",
+                    "linear-gradient(90deg,#D4AF37, #C89B2C)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -166,9 +166,15 @@ export function PersonnelPage() {
             </MetallicCard>
 
             <div className="flex gap-4 flex-wrap">
-              <Button className="bg-yellow-500 hover:bg-yellow-400 text-black rounded-xl px-7 py-6 text-base font-semibold">
-                Get Your aKoin Ring
-                <ArrowRight className="ml-2 w-4 h-4" />
+              <Button
+                className="rounded-xl px-7 py-6 text-base font-semibold text-black border border-white/10"
+                style={{
+                  background:
+                    "linear-gradient(90deg,#D4AF37, #C89B2C)",
+                  boxShadow:
+                    "0 4px 18px rgba(212,175,55,0.25)",
+                }}
+              > Get aKoin Ring
               </Button>
 
               <Button
@@ -219,15 +225,16 @@ export function PersonnelPage() {
             <h2 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
               One App.
               <br />
-              Unlimited
+              Unlimited{" "}
               <span
                 style={{
-                  background: "linear-gradient(90deg, #FFD86B, #F5B933)",
+                  background:
+                    "linear-gradient(90deg,#D4AF37, #C89B2C)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                {" "}Possibilities.
+                Possibilities.
               </span>
             </h2>
 
@@ -237,9 +244,6 @@ export function PersonnelPage() {
               wallet to your aKoin Ring.
             </p>
 
-            <Button className="rounded-xl px-7 py-6 bg-yellow-500 hover:bg-yellow-400 text-black shadow-[0_0_40px_rgba(255,210,90,0.25)] transition-all duration-300">
-              Manage Wallets
-            </Button>
           </div>
 
           {/* RIGHT ORBIT WALLET SYSTEM */}
@@ -382,6 +386,7 @@ export function PersonnelPage() {
                 </div>
               </MetallicCard>
             </motion.div>
+
             {/* PARTICLES */}
             <div className="absolute inset-0 pointer-events-none">
               {[...Array(20)].map((_, i) => (
@@ -418,8 +423,16 @@ export function PersonnelPage() {
             </div>
 
             <h2 className="text-5xl font-bold mb-6">
-              Tap. Pay.
-              <span className="text-yellow-400"> Done.</span>
+              Tap. Pay.{" "}
+              <span
+                style={{
+                  background:
+                    "linear-gradient(90deg,#D4AF37, #C89B2C)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              > Done.
+              </span>
             </h2>
           </div>
 
@@ -443,8 +456,16 @@ export function PersonnelPage() {
             </div>
 
             <h2 className="text-5xl font-bold mb-6">
-              One Ring.
-              <span className="text-yellow-400"> Every Moment.</span>
+              One Ring.{" "}
+              <span
+                style={{
+                  background:
+                    "linear-gradient(90deg,#D4AF37, #C89B2C)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              > Every Moment.
+              </span>
             </h2>
           </div>
 
@@ -484,7 +505,15 @@ export function PersonnelPage() {
                   <br />
                   Your Rules.
                   <br />
-                  <span className="text-yellow-400">
+                  {" "}
+                  <span
+                    style={{
+                      background:
+                        "linear-gradient(90deg,#D4AF37, #C89B2C)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
                     Your aKoin Ring.
                   </span>
                 </h2>
@@ -495,9 +524,16 @@ export function PersonnelPage() {
                 </p>
 
                 <div className="flex gap-4 flex-wrap">
-                  <Button className="bg-yellow-500 hover:bg-yellow-400 text-black rounded-xl px-7 py-6 text-base font-semibold">
-                    Get Your aKoin Ring
-                  </Button>
+                  <Button
+                className="rounded-xl px-7 py-6 text-base font-semibold text-black border border-white/10"
+                style={{
+                  background:
+                    "linear-gradient(90deg,#D4AF37, #C89B2C)",
+                  boxShadow:
+                    "0 4px 18px rgba(212,175,55,0.25)",
+                }}
+              > Get aKoin Ring
+              </Button>
 
                   <Button
                     variant="outline"

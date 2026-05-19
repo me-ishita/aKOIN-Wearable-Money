@@ -40,7 +40,7 @@ export function B2B() {
             Integrate {" "}
             <span
               style={{
-                background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
+                background: "linear-gradient(90deg,#D4AF37, #C89B2C)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}

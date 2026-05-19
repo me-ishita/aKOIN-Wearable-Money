@@ -109,51 +109,51 @@ export function MembershipPage() {
     <div className="pt-1 bg-background text-foreground overflow-hidden">
 
       {/* HERO SECTION */}
-<section className="relative min-h-[72vh] flex items-center justify-center overflow-hidden border-b border-border/40">
+      <section className="relative min-h-[72vh] flex items-center justify-center overflow-hidden border-b border-border/40">
 
-  {/* BACKGROUND GLOW */}
-  <div className="absolute inset-0 overflow-hidden">
-    <div className="absolute top-1/2 left-1/2 w-[700px] h-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-500/5 blur-3xl" />
-  </div>
+        {/* BACKGROUND GLOW */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 w-[700px] h-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-500/5 blur-3xl" />
+        </div>
 
-  {/* GRID */}
-  <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.06] bg-[linear-gradient(rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.4)_1px,transparent_1px)] bg-[size:120px_120px]" />
+        {/* GRID */}
+        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.06] bg-[linear-gradient(rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.4)_1px,transparent_1px)] bg-[size:120px_120px]" />
 
-  <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
 
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-    >
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
 
-      <div className="inline-flex px-4 py-2 rounded-full border border-yellow-500/20 bg-yellow-500/10 text-yellow-400 text-sm tracking-wide mb-6">
-        MEMBERSHIP ACCESS
-      </div>
+            <div className="inline-flex px-4 py-2 rounded-full border border-yellow-500/20 bg-yellow-500/10 text-yellow-400 text-sm tracking-wide mb-6">
+              MEMBERSHIP ACCESS
+            </div>
 
-      <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-tight mb-6">
-        Choose Your{" "}
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-tight mb-6">
+              Choose Your{" "}
 
-        <span
-          style={{
-            background:
-              "linear-gradient(90deg, #FFD86B, #F5B933)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          Wearable Identity
-        </span>
-      </h1>
+              <span
+                style={{
+                  background:
+                    "linear-gradient(90deg,#D4AF37, #C89B2C)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                Wearable Identity
+              </span>
+            </h1>
 
-      <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-        Select the perfect wearable for your lifestyle.
-        Ring and Keychain are completely free.
-        Upgrade to Bracelet for premium access.
-      </p>
-    </motion.div>
-  </div>
-</section>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Select the perfect wearable for your lifestyle.
+              Ring and Keychain are completely free.
+              Upgrade to Bracelet for premium access.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* WEARABLE CARDS */}
       <section className="py-32 border-b border-border/40 relative overflow-hidden">
@@ -188,10 +188,9 @@ export function MembershipPage() {
                     <div
                       className={`
                         px-4 py-1 rounded-full text-xs font-semibold tracking-wide
-                        ${
-                          wearable.golden
-                            ? "bg-yellow-500 text-black"
-                            : "bg-primary/10 border border-border text-foreground"
+                        ${wearable.golden
+                          ? "bg-yellow-500 text-black"
+                          : "bg-primary/10 border border-border text-foreground"
                         }
                       `}
                     >
@@ -248,7 +247,7 @@ export function MembershipPage() {
                       <div
                         style={{
                           background:
-                            "linear-gradient(90deg, #FFD86B, #F5B933)",
+                            "linear-gradient(90deg,#D4AF37, #C89B2C)",
                           WebkitBackgroundClip: "text",
                           WebkitTextFillColor: "transparent",
                         }}
@@ -292,12 +291,19 @@ export function MembershipPage() {
                       }}
                       className={`
                         mt-10 w-full py-4 rounded-2xl font-semibold transition-all duration-300
-                        ${
-                          wearable.golden
-                            ? "bg-yellow-500 hover:bg-yellow-400 text-black shadow-[0_0_40px_rgba(255,210,90,0.25)]"
-                            : "bg-primary text-primary-foreground hover:opacity-90"
+                        ${wearable.golden
+                          ? " text-black shadow-[0_0_40px_rgba(255,210,90,0.25)]"
+                          : "bg-primary text-primary-foreground hover:opacity-90"
                         }
                       `}
+                      style={
+                        wearable.golden
+                          ? {
+                            background:
+                              "linear-gradient(90deg,#D4AF37,#F6E27A,#C89B2C)",
+                          }
+                          : {}
+                      }
                     >
                       {wearable.isPremium
                         ? "Upgrade to Premium"
@@ -327,7 +333,7 @@ export function MembershipPage() {
               <span
                 style={{
                   background:
-                    "linear-gradient(90deg, #FFD86B, #F5B933)",
+                    "linear-gradient(90deg,#D4AF37, #C89B2C)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -463,7 +469,7 @@ export function MembershipPage() {
               <span
                 style={{
                   background:
-                    "linear-gradient(90deg, #FFD86B, #F5B933)",
+                    "linear-gradient(90deg,#D4AF37, #C89B2C)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -484,8 +490,11 @@ export function MembershipPage() {
               whileTap={{
                 scale: 0.96,
               }}
-              className="px-10 py-5 rounded-2xl bg-yellow-500 hover:bg-yellow-400 text-black font-semibold shadow-[0_0_40px_rgba(255,210,90,0.25)] transition-all duration-300"
-            >
+              className="px-10 py-5 rounded-2xl text-black font-semibold transition-all duration-300 hover:scale-[1.02] shadow-[0_0_35px_rgba(212,175,55,0.28)] border border-white/10"
+              style={{
+                background:
+                  "linear-gradient(90deg,#D4AF37,#F6E27A,#C89B2C)",
+              }}            >
               Get Your Free Wearable
             </motion.button>
           </motion.div>

@@ -1,160 +1,145 @@
 import { motion } from "motion/react";
 
-const highlights = [
-  {
-    title: "Decoupled Payments",
-    desc: "Separating identity from transactions to enhance privacy, security, and control.",
-  },
-  {
-    title: "Built for Trust",
-    desc: "Designed by experts in FinTech, Cybersecurity, and scalable infrastructure systems.",
-  },
-  {
-    title: "Frictionless Experience",
-    desc: "Payments that feel invisible when they work and impenetrable when they don’t.",
-  },
-];
-
-const logos = ["TechCrunch", "Forbes", "Wired", "Fast Company", "Bloomberg"];
-
 export function AboutPage() {
   return (
-    <section className="relative pt-28 pb-24 bg-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
-
-        {/* HERO */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center space-y-6"
-        >
-            <div className="inline-flex px-4 py-2 rounded-full border border-yellow-500/20 bg-yellow-500/10 text-yellow-400 text-sm uppercase mb-6">
-              About aKoin
-            </div>
-
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tight">
-            Redefining the{" "}
-            <span className="bg-gradient-to-r from-[#C9A84C] to-[#E8C97A] bg-clip-text text-transparent">
-              Future of Transactions
-            </span>
-          </h1>
-
-          <p className="max-w-3xl mx-auto text-muted-foreground">
-            We are building a secure, seamless, and identity-independent payment layer
-            designed for a digital-first world where privacy and speed matter equally.
-          </p>
-        </motion.div>
-
-        {/* CORE CARDS */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {highlights.map((item, i) => (
-            <motion.div
-              key={item.title}
+    <section className="min-h-screen pb-24 pt-28 bg-background">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="space-y-8">
+          <div className="rounded-3xl border border-border bg-muted/70 p-10 shadow-xl">
+            <p className="text-sm uppercase tracking-[0.3em] text-primary mb-4">
+              About Us
+            </p>
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="rounded-3xl border border-border bg-muted/50 p-6 shadow-xl hover:shadow-2xl transition-all"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl sm:text-5xl font-bold"
             >
-              <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {item.desc}
+              Built for the security and convenience of the modern global citizen.
+            </motion.h1>
+            <div className="mt-6 space-y-6 text-muted-foreground">
+              <p>
+                We believe that payments should be secure, seamless, and
+                separate from your core identity. In a world of constant data
+                breaches and clunky digital wallets, we saw a need for a new
+                payment layer.
               </p>
+              <p>
+                aKoin is decoupled from legacy bank infrastructure and built for
+                the security and convenience of the modern global citizen.
+              </p>
+              <p>
+                Founded by industry veterans from fintech, cybersecurity, and
+                global-scale systems transformation, aKoin is engineered to be
+                the new standard in payment security and convenience.
+              </p>
+              <p>
+                Our technology is designed to keep your core identity separate
+                from the act of paying, so every purchase is fast, private, and
+                protected.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-12 lg:grid-cols-[1fr_420px] items-start">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div className="rounded-3xl border border-border bg-background/80 p-8 shadow-inner">
+                <h2 className="text-3xl font-semibold mb-4">
+                  Our Mission: To redefine the Transaction.
+                </h2>
+                <div className="space-y-4 text-muted-foreground">
+                  <p>
+                    In a world of constant data breaches and clunky digital
+                    wallets, we are building a new payment layer that is
+                    secure, frictionless, and independent of your core identity.
+                  </p>
+                  <p>
+                    We believe payments should be invisible when they work, and
+                    invisible to attackers when they don’t.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-3xl border border-border bg-background/80 p-8 shadow-inner">
+                <h2 className="text-3xl font-semibold mb-4">
+                  Our Vision for a Decoupled World
+                </h2>
+                <div className="space-y-4 text-muted-foreground">
+                  <p>
+                    aKoin is more than a product. It's a new, more resilient
+                    global payment infrastructure designed for the realities of a
+                    digital-first world.
+                  </p>
+                  <p>
+                    Our vision is to create a secure ecosystem where your money
+                    is simple to use, safe to carry, and smart enough to manage
+                    itself.
+                  </p>
+                  <p>
+                    By separating the "act of paying" from your "core bank
+                    account", we are building the financial firewall that
+                    consumers and businesses have needed for decades.
+                  </p>
+                  <p>
+                    This is the future of payment security — fast, private, and
+                    designed around people rather than legacy banking systems.
+                  </p>
+                </div>
+              </div>
             </motion.div>
-          ))}
-        </div>
 
-        {/* MISSION + VISION */}
-        <div className="grid lg:grid-cols-2 gap-10">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="rounded-3xl border border-border bg-background/70 p-8 shadow-inner"
-          >
-            <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
-            <p className="text-muted-foreground space-y-4 leading-relaxed">
-              To redefine the transaction by building a payment system that is secure,
-              frictionless, and independent of core identity systems.
-              <br /><br />
-              We believe payments should be invisible when successful and
-              completely protected when exposed to threats.
-            </p>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="rounded-3xl border border-border bg-primary/10 p-8 shadow-2xl"
+            >
+              <div className="space-y-6">
+                <div className="rounded-3xl bg-background/90 p-6 border border-border">
+                  <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-3">
+                    Why decoupled payments?
+                  </p>
+                  <p className="text-lg font-semibold text-foreground">
+                    Separation of identity and payment is the next step in
+                    protecting consumers and businesses from data loss,
+                    fraud, and unnecessary friction.
+                  </p>
+                </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="rounded-3xl border border-border bg-background/70 p-8 shadow-inner"
-          >
-            <h2 className="text-2xl font-semibold mb-4">Our Vision</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              A world where payments are decoupled from identity, giving users full
-              control over privacy, security, and financial autonomy.
-              <br /><br />
-              We are building the financial firewall modern systems have always needed.
-            </p>
-          </motion.div>
-        </div>
+                <div className="rounded-3xl bg-background/90 p-6 border border-border">
+                  <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-3">
+                    Built by experts
+                  </p>
+                  <p className="text-lg font-semibold text-foreground">
+                    Founded by leaders in FinTech, Cybersecurity, and global
+                    scale systems transformation, aKoin is engineered to be the
+                    new standard in payment security and convenience.
+                  </p>
+                </div>
 
-        {/* PRINCIPLES */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="rounded-3xl border border-border bg-primary/10 p-10 shadow-2xl"
-        >
-          <h2 className="text-3xl font-semibold mb-6 text-center">
-            Built on Core Principles
-          </h2>
+                <div className="rounded-3xl bg-background/90 p-6 border border-border">
+                  <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-3">
+                    Future-ready infrastructure
+                  </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="rounded-2xl bg-background/80 border border-border p-6">
-              <p className="font-semibold mb-2">Privacy First</p>
-              <p className="text-sm text-muted-foreground">
-                Your identity stays separate from every transaction.
-              </p>
-            </div>
+                  <p className="text-lg font-semibold text-foreground">
+                    Scalable infrastructure built for secure,
+                    seamless, and next-generation digital transactions.
+                    experiences designed to evolve with modern financial ecosystems.
+                  </p>
+                </div>
 
-            <div className="rounded-2xl bg-background/80 border border-border p-6">
-              <p className="font-semibold mb-2">Security by Design</p>
-              <p className="text-sm text-muted-foreground">
-                Built to minimize exposure and maximize protection.
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-background/80 border border-border p-6">
-              <p className="font-semibold mb-2">Global Scalability</p>
-              <p className="text-sm text-muted-foreground">
-                Engineered for modern, borderless digital finance.
-              </p>
-            </div>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
-
-        {/* FEATURED */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center space-y-8"
-        >
-          <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
-            As Featured In
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-10 text-muted-foreground/60 font-semibold">
-            {logos.map((l) => (
-              <span key={l} className="hover:text-foreground transition-colors">
-                {l}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-
+        </div>
       </div>
     </section>
   );
 }
+

@@ -37,7 +37,7 @@ export function Hero() {
             The Secure, Multi-Currency{" "}
             <span
               style={{
-                background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
+                background: "linear-gradient(90deg,#D4AF37, #C89B2C)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
@@ -60,25 +60,32 @@ export function Hero() {
 
             {/* Highlight Line */}
             <div
-              className="text-lg md:text-xl font-semibold tracking-wide px-6 py-2 rounded-full border border-[#C9A84C]/30 backdrop-blur-md"
+              className="inline-flex items-center gap-3 text-lg md:text-xl font-semibold tracking-wide px-7 py-3 rounded-full border border-[#D4AF37]/30 backdrop-blur-xl"
               style={{
                 background:
-                  "linear-gradient(90deg, rgba(201,168,76,0.12), rgba(232,201,122,0.08))",
-                boxShadow: "0 0 25px rgba(201,168,76,0.15)",
+                  "linear-gradient(135deg, rgba(255,255,255,0.06), rgba(212,175,55,0.08))",
+                boxShadow:
+                  "0 0 35px rgba(212,175,55,0.18), inset 0 0 12px rgba(255,255,255,0.04)",
               }}
             >
               <span className="text-white/90">
-                Choose Your Smart Wearable —
-              </span>{" "}
+                Choose Your Smart Wearable
+              </span>
+
+              <span className="text-white/40 text-base">—</span>
+
               <span
+                className="relative px-4 py-1 rounded-full font-extrabold tracking-widest uppercase"
                 style={{
-                  background: "linear-gradient(90deg, #C9A84C, #E8C97A)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
+                  background:
+                    "linear-gradient(135deg, #FFD86B 0%, #FFB347 45%, #FF6B6B 100%)",
+                  color: "#333333",
+                  boxShadow:
+                    "0 0 20px rgba(255, 184, 77, 0.55), 0 0 40px rgba(255,107,107,0.25)",
                 }}
-                className="font-bold"
               >
-                Free with aKoin.
+                FREE
+                                
               </span>
             </div>
           </motion.div>
