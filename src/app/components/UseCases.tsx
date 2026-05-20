@@ -80,7 +80,7 @@ const slides: Slide[] = [
     headline: "Corporate & Enterprise",
     subheadline: "HR-Controlled Spending for Every Employee",
     story:
-      "Issue aKoin rings to your entire workforce. HR holds the master account — allocating budgets per department, per role, per event. Every coffee, cab, or client dinner is logged, categorized, and reconciled automatically.",
+      "Issue aKoin keychain to your entire workforce. HR holds the master account — allocating budgets per department, per role, per event. Every coffee, cab, or client dinner is logged, categorized, and reconciled automatically.",
     features: [
       "HR dashboard with full org visibility",
       "Department-level budget allocation",
@@ -95,7 +95,7 @@ const slides: Slide[] = [
     ],
     flowSteps: [
       { icon: Building2, label: "HR creates accounts" },
-      { icon: Users, label: "Rings issued to team" },
+      { icon: Users, label: "Keychains issued to team" },
       { icon: Zap, label: "Employee taps to pay" },
       { icon: TrendingUp, label: "HR views all spend" },
     ],
