@@ -351,14 +351,21 @@ export function PersonnelPage() {
 
               <MetallicCard
                 golden
-                className="w-[300px] relative z-10">
+                className="
+    w-[300px] relative z-10
+
+    [&>div:first-child]:hidden
+    [&>div:nth-child(2)]:hidden
+    [&_.group-hover\\:opacity-100]:opacity-0
+  "
+              >
                 <div className="space-y-6 text-center">
 
                   {/* ICON + TITLE */}
                   <div className="flex items-center justify-center gap-4">
 
                     <div className="w-6 h-2 rounded-2xl bg-yellow-500/10 border border-yellow-400/20 flex items-center justify-center">
-                      <Wallet className="w-8 h-8 text-yellow-400" />
+                      <Wallet className="w-8 h-8 text-gray-700" />
                     </div>
 
                     <div className="text-left">
@@ -366,7 +373,7 @@ export function PersonnelPage() {
                         Master Wallet
                       </p>
 
-                      <p className="text-xs uppercase tracking-[0.25em] text-yellow-400/70">
+                      <p className="text-xs uppercase tracking-[0.25em] text-gray-700">
                         Balance
                       </p>
                     </div>
@@ -525,15 +532,15 @@ export function PersonnelPage() {
 
                 <div className="flex gap-4 flex-wrap">
                   <Button
-                className="rounded-xl px-7 py-6 text-base font-semibold text-black border border-white/10"
-                style={{
-                  background:
-                    "linear-gradient(90deg,#D4AF37, #C89B2C)",
-                  boxShadow:
-                    "0 4px 18px rgba(212,175,55,0.25)",
-                }}
-              > Get aKoin Ring
-              </Button>
+                    className="rounded-xl px-7 py-6 text-base font-semibold text-black border border-white/10"
+                    style={{
+                      background:
+                        "linear-gradient(90deg,#D4AF37, #C89B2C)",
+                      boxShadow:
+                        "0 4px 18px rgba(212,175,55,0.25)",
+                    }}
+                  > Get aKoin Ring
+                  </Button>
 
                   <Button
                     variant="outline"

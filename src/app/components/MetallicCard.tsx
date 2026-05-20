@@ -32,13 +32,13 @@ export function MetallicCard({
           ${golden
             ? `
                bg-gradient-to-r 
-              from-[#C9A84C]/70 
-              via-[#E8C97A]/50 
-              to-[#D4AF37]/70
+              from-[#D4AF37]/80
+via-[#F4C542]/60
+to-[#C89B2C]/80
 
-              dark:from-[#D4AF37]/60
-              dark:via-[#F5D97A]/40
-              dark:to-[#C9A84C]/60
+dark:from-[#D4AF37]/70
+dark:via-[#F4C542]/50
+dark:to-[#C89B2C]/70
               `
             : `
                 bg-gradient-to-r 
@@ -57,13 +57,13 @@ export function MetallicCard({
           ${golden
             ? `
                bg-gradient-to-br 
-from-[#FFF4CC]/18
-via-[#FFE8A3]/8
-to-[#E8C97A]/10
+from-[#FFF0B2]/22
+via-[#FFD54A]/10
+to-[#D4AF37]/14
 
-dark:from-[#FFF4CC]/14
-dark:via-[#FFD86B]/10
-dark:to-[#E8C97A]/10
+dark:from-[#FFF0B2]/18
+dark:via-[#FFC933]/12
+dark:to-[#D4AF37]/12
               `
             : `
                 bg-gradient-to-br 
@@ -84,7 +84,7 @@ dark:to-[#E8C97A]/10
             ? `
                 bg-gradient-to-tr 
                 from-transparent 
-                via-[#FFF4CC]/20 
+                via-[#FFE27A]/28
                 to-transparent
               `
             : `
@@ -105,16 +105,15 @@ dark:to-[#E8C97A]/10
           ${golden
             ? `
                 bg-gradient-to-br 
-from-[#C9A84C]/35
-via-[#D4AF37]/22
-to-[#E8C97A]/28
-border-[#E8C97A]/35
+from-[#F4C542]/55
+via-[#D4AF37]/38
+to-[#C89B2C]/45
+border-[#E6BE4A]/50
 
-dark:from-[#D4AF37]/30
-dark:via-[#C9A84C]/22
-dark:to-[#F5D97A]/20
-dark:border-[#F5D97A]/30
-
+dark:from-[#E6BE4A]/40
+dark:via-[#D4AF37]/32
+dark:to-[#C89B2C]/30
+dark:border-[#F4C542]/45
               `
             : `
                 bg-gradient-to-br 
@@ -134,9 +133,9 @@ dark:border-[#F5D97A]/30
             ${golden
               ? `
                   bg-gradient-to-br 
-from-[#FFE8A3]/18
-via-[#FFD86B]/8
-to-[#D4AF37]/14
+from-[#FFE27A]/30
+via-[#F4C542]/14
+to-[#D4AF37]/22
                 `
               : `
                   bg-gradient-to-br 
