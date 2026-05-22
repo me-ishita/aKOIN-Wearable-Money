@@ -17,6 +17,10 @@ import {
   TrendingUp,
 } from "lucide-react";
 
+import family from "../../assets/family.png";
+import corporate from "../../assets/corporate.png";
+import athelets from "../../assets/athelets.png";
+
 interface FlowStep {
   icon: React.ElementType;
   label: string;
@@ -69,9 +73,9 @@ const slides: Slide[] = [
       { icon: Zap, label: "Child taps to pay" },
       { icon: Eye, label: "Parent gets alert" },
     ],
-    bgPhoto:"https://media.istockphoto.com/id/1214665301/photo/for-them-every-moment-is-fun.jpg?b=1&s=612x612&w=0&k=20&c=Dns3lfcdUnmRedDaeXA2XbtCC7uaWigBZg0mPdiXylI=",
+    bgPhoto:family,
     accentGradient: "from-amber-500/20 via-yellow-400/10 to-transparent",
-    badgeText: "For Families",
+    badgeText: "Personnel",
   },
   {
     id: "corporate",
@@ -99,10 +103,9 @@ const slides: Slide[] = [
       { icon: Zap, label: "Employee taps to pay" },
       { icon: TrendingUp, label: "HR views all spend" },
     ],
-    bgPhoto:
-      "https://images.unsplash.com/photo-1758520145408-dedb359d1c49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    bgPhoto: corporate,
     accentGradient: "from-blue-500/20 via-indigo-400/10 to-transparent",
-    badgeText: "For Business",
+    badgeText: "Business",
   },
   {
     id: "active",
@@ -111,7 +114,7 @@ const slides: Slide[] = [
     headline: "The Phone-Free Life",
     subheadline: "Run, Swim, Train — Pay With a Tap",
     story:
-      "No pocket. No wallet. No phone. Just you and the ring. Whether you're hitting a 10K, swimming laps, or crushing a HIIT session — aKoin moves with you. Grab a post-workout smoothie and tap your way through the day.",
+      "No pocket. No wallet. No phone. Just you and the aKoin bracelet. Whether you're hitting a 10K, swimming laps, or crushing a HIIT session — aKoin moves with you. Grab a post-workout smoothie and tap your way through the day.",
     features: [
       "IP68 waterproof — swim & sweat proof",
       "No battery required, ever",
@@ -130,10 +133,9 @@ const slides: Slide[] = [
       { icon: Zap, label: "Tap ring to pay" },
       { icon: Lock, label: "Secure & instant" },
     ],
-    bgPhoto:
-      "https://images.unsplash.com/photo-1728718248311-2fdb76913d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    bgPhoto: athelets,
     accentGradient: "from-emerald-500/20 via-teal-400/10 to-transparent",
-    badgeText: "For Athletes",
+    badgeText: "Exclusive",
   },
 ];
 
@@ -639,18 +641,7 @@ export function UseCases() {
               transition={{ duration: 0.4 }}
               className="absolute top-6 right-6 z-20"
             >
-              <div
-                className="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border"
-                style={{
-                  color: slide.categoryColor,
-                  borderColor: slide.categoryColor + "50",
-                  background: `rgba(0,0,0,0.6)`,
-                  backdropFilter: "blur(12px)",
-                  boxShadow: `0 4px 20px ${slide.categoryColor}20`,
-                }}
-              >
-                {slide.badgeText}
-              </div>
+              
             </motion.div>
           </AnimatePresence>
         </div>

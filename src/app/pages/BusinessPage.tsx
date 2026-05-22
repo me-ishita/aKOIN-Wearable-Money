@@ -1,4 +1,6 @@
 import { motion } from "motion/react";
+import { useNavigate } from "react-router";
+
 import {
   Shield,
   Globe,
@@ -120,6 +122,7 @@ const solutions = [
 
 
 export function BusinessPage() {
+    const navigate = useNavigate();
   return (
     <div className="pt-20 overflow-hidden">
 
@@ -205,7 +208,8 @@ export function BusinessPage() {
 
             <div className="flex flex-wrap gap-4">
 
-              <Button
+              <Button onClick={() => navigate("/membership")}
+
                 className="rounded-xl px-7 py-6 text-base font-semibold text-black border border-white/10"
                 style={{
                   background:
@@ -500,7 +504,10 @@ export function BusinessPage() {
           <div className="grid lg:grid-cols-4 gap-6">
 
             {solutions.map((item, i) => (
-              <MetallicCard golden={i % 2 === 1}>
+              <MetallicCard
+                key={item.title}
+                golden={i % 2 === 1}
+              >
                 <img
                   src={item.image}
                   className="rounded-xl mb-5 h-[220px] w-full object-cover"

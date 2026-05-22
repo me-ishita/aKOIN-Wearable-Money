@@ -16,17 +16,17 @@ const contactMethods = [
   {
     icon: Mail,
     title: "Email Us",
-    info: "support@akoin.com",
+    info: "info@akoin.in",
   },
   {
     icon: Phone,
     title: "Call Us",
-    info: "+1 (555) 123-4567",
+    info: "+44 7966 623524",
   },
   {
     icon: MapPin,
     title: "Visit Us",
-    info: "San Francisco, CA",
+    info: "Londoon",
   },
 ];
 
@@ -75,8 +75,14 @@ export function ContactPage() {
 
               <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
                 Let's build the future of{" "}
-                <span className="bg-gradient-to-r from-[#C9A84C] to-[#F5E6B2] bg-clip-text text-transparent">
-                  secure payments
+                <span
+                  style={{
+                    background:
+                      "linear-gradient(90deg,#D4AF37, #C89B2C)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >secure payments
                 </span>
               </h1>
 

@@ -15,6 +15,7 @@ import {
   ShieldAlert,
   Store,
 } from "lucide-react";
+import { useNavigate } from "react-router";
 
 import ringImg from "../../assets/Ring-preview.png";
 import groceryImg from "../../assets/grocery-demo.png";
@@ -102,6 +103,7 @@ const lifestyle = [
 ];
 
 export function PersonnelPage() {
+    const navigate = useNavigate();
   return (
     <main className="bg-background text-foreground overflow-hidden">
 
@@ -166,7 +168,7 @@ export function PersonnelPage() {
             </MetallicCard>
 
             <div className="flex gap-4 flex-wrap">
-              <Button
+              <Button   onClick={() => navigate("/membership")}
                 className="rounded-xl px-7 py-6 text-base font-semibold text-black border border-white/10"
                 style={{
                   background:
@@ -181,7 +183,7 @@ export function PersonnelPage() {
                 variant="outline"
                 className="rounded-xl px-7 py-6"
               >
-                Explore Sub-Wallets
+                Watch demo
               </Button>
             </div>
           </motion.div>
@@ -532,14 +534,14 @@ export function PersonnelPage() {
 
                 <div className="flex gap-4 flex-wrap">
                   <Button
+                    onClick={() => navigate("/membership")}
                     className="rounded-xl px-7 py-6 text-base font-semibold text-black border border-white/10"
                     style={{
-                      background:
-                        "linear-gradient(90deg,#D4AF37, #C89B2C)",
-                      boxShadow:
-                        "0 4px 18px rgba(212,175,55,0.25)",
+                      background: "linear-gradient(90deg,#D4AF37, #C89B2C)",
+                      boxShadow: "0 4px 18px rgba(212,175,55,0.25)",
                     }}
-                  > Get aKoin Ring
+                  >
+                    Get aKoin Ring
                   </Button>
 
                   <Button

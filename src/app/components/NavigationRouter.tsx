@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "./ui/button";
-
+import { useNavigate } from "react-router";
 import logoVideo from "../../assets/ashok-chakra.webm";
 import akoinLogo from "../../assets/akoin.png";
 
@@ -19,6 +19,7 @@ const navLinks = [
 
 export function NavigationRouter() {
   const { theme, setTheme } = useTheme();
+  const navigate = useNavigate();
 
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -44,11 +45,10 @@ export function NavigationRouter() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-black/80 backdrop-blur-xl border-b border-white/10"
-          : "bg-black/30 backdrop-blur-md"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-black/80 backdrop-blur-xl border-b border-white/10"
+        : "bg-black/30 backdrop-blur-md"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -116,11 +116,10 @@ export function NavigationRouter() {
                   className="relative px-4 py-2 text-sm font-medium transition-colors"
                 >
                   <span
-                    className={`relative z-10 transition-colors ${
-                      isActive
-                        ? "text-white"
-                        : "text-gray-300 hover:text-white"
-                    }`}
+                    className={`relative z-10 transition-colors ${isActive
+                      ? "text-white"
+                      : "text-gray-300 hover:text-white"
+                      }`}
                   >
                     {link.name}
                   </span>
@@ -166,9 +165,20 @@ export function NavigationRouter() {
             </Button>
 
             {/* GET STARTED BUTTON */}
-            <Button className="hidden md:inline-flex bg-white text-black hover:bg-white/90">
-              Get Started
-            </Button>
+            <Button
+  size="lg"
+  onClick={() => navigate("/membership")}
+  className="
+    group
+    bg-black text-white
+    dark:bg-white dark:text-black
+    hover:opacity-90
+    transition-all duration-300
+    shadow-lg
+  "
+>
+  Get Started
+</Button>
 
             {/* MOBILE MENU BUTTON */}
             <Button
@@ -216,20 +226,21 @@ export function NavigationRouter() {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`block px-4 py-3 rounded-lg transition-colors ${
-                      isActive
-                        ? "bg-gradient-to-r from-yellow-500 to-amber-600 text-black font-medium"
-                        : "text-gray-300 hover:bg-white/5 hover:text-white"
-                    }`}
+                    className={`block px-4 py-3 rounded-lg transition-colors ${isActive
+                      ? "bg-gradient-to-r from-yellow-500 to-amber-600 text-black font-medium"
+                      : "text-gray-300 hover:bg-white/5 hover:text-white"
+                      }`}
                   >
                     {link.name}
                   </Link>
                 );
               })}
 
-              <Button className="w-full bg-white text-black hover:bg-white/90 mt-4">
-                Get Started
-              </Button>
+              <Link to="/membership">
+                <Button className="w-full bg-white text-black hover:bg-white/90 mt-4">
+                  Get Started
+                </Button>
+              </Link>
             </div>
           </motion.div>
         )}

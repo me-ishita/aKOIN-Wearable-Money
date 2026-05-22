@@ -1,9 +1,18 @@
 import { motion } from "motion/react";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, X } from "lucide-react";
 import { Button } from "./ui/button";
+import { useState } from "react";
+import { useNavigate } from "react-router";
+
 import hero from "../../assets/HeroBg.mp4";
+import demo from "../../assets/demo-video.mp4";
+
 
 export function Hero() {
+
+  const [showVideo, setShowVideo] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* FULLSCREEN VIDEO BACKGROUND */}
@@ -85,7 +94,7 @@ export function Hero() {
                 }}
               >
                 FREE
-                                
+
               </span>
             </div>
           </motion.div>
@@ -99,14 +108,15 @@ export function Hero() {
             {/* Get Started Button */}
             <Button
               size="lg"
+              onClick={() => navigate("/membership")}
               className="
-      group
-      bg-black text-white
-      dark:bg-white dark:text-black
-      hover:opacity-90
-      transition-all duration-300
-      shadow-lg
-    "
+    group
+    bg-black text-white
+    dark:bg-white dark:text-black
+    hover:opacity-90
+    transition-all duration-300
+    shadow-lg
+  "
             >
               Get Started
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -116,14 +126,15 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
+              onClick={() => setShowVideo(true)}
               className="
-      group
-      border-black/20 text-black
-      hover:bg-black/5
-      dark:border-white/30 dark:text-white
-      dark:hover:bg-white/10
-      transition-all duration-300
-    "
+    group
+    border-black/20 text-black
+    hover:bg-black/5
+    dark:border-white/30 dark:text-white
+    dark:hover:bg-white/10
+    transition-all duration-300
+  "
             >
               <Play className="mr-2 h-4 w-4" />
               Watch Demo
@@ -147,6 +158,28 @@ export function Hero() {
           <div className="w-1 h-2 rounded-full bg-white/60" />
         </motion.div>
       </motion.div>
+
+      {/* VIDEO MODAL */}
+      {showVideo && (
+        <div className="fixed inset-0 z-[99999] bg-black/90 backdrop-blur-md flex items-center justify-center p-6">
+
+          <button
+            onClick={() => setShowVideo(false)}
+            className="absolute top-6 right-6 text-white z-[100000]"
+          >
+            <X size={32} />
+          </button>
+
+          <video
+            src={demo}
+            controls
+            autoPlay
+            className="w-full max-w-6xl max-h-[90vh] rounded-2xl shadow-2xl"
+          />
+        </div>
+      )}
+
     </section>
+
   );
 }

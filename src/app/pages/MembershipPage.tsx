@@ -39,7 +39,7 @@ const wearables = [
     tagline: "Premium Identity",
     price: "Premium",
     image: braceletImg,
-    glowColor: "rgba(255, 210, 90, 0.55)",
+    glowColor: "rgba(255, 210, 90, 0.12)",
     features: [
       "All Ring & Keychain features",
       "Unlimited access everywhere",
@@ -77,32 +77,6 @@ const wearables = [
   },
 ];
 
-const premiumBenefits = [
-  {
-    icon: Crown,
-    title: "Unlimited Access",
-    description:
-      "Use your bracelet at any aKOIN-enabled location worldwide",
-  },
-  {
-    icon: Star,
-    title: "Priority Membership",
-    description:
-      "Skip lines and enjoy VIP treatment at partner venues",
-  },
-  {
-    icon: Globe,
-    title: "Global Currency Access",
-    description:
-      "Seamlessly transact in multiple currencies without conversion fees",
-  },
-  {
-    icon: Shield,
-    title: "Premium Identity",
-    description:
-      "Stand out with exclusive premium member status and privileges",
-  },
-];
 
 export function MembershipPage() {
   return (
@@ -180,7 +154,17 @@ export function MembershipPage() {
 
                 <MetallicCard
                   golden={wearable.golden}
-                  className="h-full relative overflow-hidden"
+                  className="
+  h-full relative overflow-hidden
+
+  border rounded-[32px]
+
+  border-black/35
+  dark:border-white/35
+
+  shadow-[0_8px_30px_rgba(0,0,0,0.06)]
+  dark:shadow-[0_10px_40px_rgba(0,0,0,0.45)]
+"
                 >
 
                   {/* BADGE */}
@@ -198,7 +182,7 @@ export function MembershipPage() {
                     </div>
                   </div>
 
-                  <div className="relative z-10 flex flex-col h-full min-h-[920px] lg:min-h-[980px]">
+                  <div className="relative z-20 flex flex-col h-full min-h-[920px] lg:min-h-[980px]">
 
                     {/* IMAGE */}
                     <motion.div
@@ -212,17 +196,13 @@ export function MembershipPage() {
 
                       {/* IMAGE GLOW */}
                       <motion.div
-                        className="absolute inset-0 rounded-full blur-3xl"
+                        className="absolute inset-0 rounded-full blur-3xl z-0"
                         style={{
                           background: wearable.glowColor,
                         }}
                         animate={{
                           scale: [1, 1.15, 1],
-                          opacity: [0.4, 0.7, 0.4],
-                        }}
-                        transition={{
-                          repeat: Infinity,
-                          duration: 5,
+                          opacity: [0.25, 0.45, 0.25],
                         }}
                       />
 
@@ -240,7 +220,12 @@ export function MembershipPage() {
                         {wearable.name}
                       </h3>
 
-                      <p className="text-muted-foreground mb-5">
+                      <p
+                        className={`mb-5 ${wearable.golden
+                          ? "text-black/80 dark:text-white/80"
+                          : "text-muted-foreground"
+                          }`}
+                      >
                         {wearable.tagline}
                       </p>
 
@@ -274,28 +259,29 @@ export function MembershipPage() {
                         >
                           <Check className="w-5 h-5 text-yellow-400 mt-0.5 shrink-0" />
 
-                          <span className="text-sm text-muted-foreground leading-relaxed">
+                          <span
+                            className={`text-sm leading-relaxed ${wearable.golden
+                              ? "text-black dark:text-white"
+                              : "text-muted-foreground"
+                              }`}
+                          >
                             {feature}
                           </span>
                         </motion.div>
                       ))}
                     </div>
 
-                    {/* BUTTON */}
                     <motion.button
-                      whileHover={{
-                        scale: 1.03,
-                      }}
-                      whileTap={{
-                        scale: 0.97,
-                      }}
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                      onClick={() => window.open("https://super-vault.vercel.app/", "_blank")}
                       className={`
-                        mt-10 w-full py-4 rounded-2xl font-semibold transition-all duration-300
-                        ${wearable.golden
+    mt-10 w-full py-4 rounded-2xl font-semibold transition-all duration-300
+    ${wearable.golden
                           ? " text-black shadow-[0_0_40px_rgba(255,210,90,0.25)]"
                           : "bg-primary text-primary-foreground hover:opacity-90"
                         }
-                      `}
+  `}
                       style={
                         wearable.golden
                           ? {
@@ -318,17 +304,23 @@ export function MembershipPage() {
       </section>
 
       {/* COMPARISON TABLE */}
-      <section className="py-32 border-b border-border/40">
+      <section className="py-32 border-b border-border/40 relative overflow-hidden">
 
-        <div className="max-w-5xl mx-auto px-6">
+        {/* BACKGROUND GLOW */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-yellow-500/5 blur-3xl" />
+        </div>
 
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+
+          {/* HEADING */}
           <div className="text-center mb-20">
 
-            <div className="inline-flex px-4 py-2 rounded-full border border-yellow-500/20 bg-yellow-500/10 text-yellow-400 text-sm tracking-wide mb-6">
-              COMPARISON
+            <div className="inline-flex px-5 py-2 rounded-full border border-yellow-500/20 bg-yellow-500/10 text-yellow-500 dark:text-yellow-400 text-sm tracking-[0.25em] uppercase mb-6 backdrop-blur-xl">
+              Comparison
             </div>
 
-            <h2 className="text-5xl font-bold">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
               All Wearables.
               <span
                 style={{
@@ -341,38 +333,96 @@ export function MembershipPage() {
                 {" "}One Ecosystem.
               </span>
             </h2>
+
+            <p className="mt-5 text-muted-foreground text-lg max-w-2xl mx-auto">
+              Compare every aKoin wearable and choose the experience that fits your lifestyle.
+            </p>
           </div>
 
-          <MetallicCard golden>
+          {/* TABLE CONTAINER */}
+          <div
+            className="
+        rounded-[34px]
+        border
+        overflow-hidden
+        backdrop-blur-xl
+
+        border-black/10
+        dark:border-white/10
+
+        bg-white/70
+        dark:bg-[#111418]/80
+
+        shadow-[0_10px_60px_rgba(0,0,0,0.08)]
+        dark:shadow-[0_10px_60px_rgba(0,0,0,0.45)]
+      "
+          >
 
             <div className="overflow-x-auto">
 
-              <div className="min-w-[700px]">
+              <div className="min-w-[760px]">
 
-                {/* HEADER */}
-                <div className="grid grid-cols-4 gap-4 pb-6 border-b border-border/40 mb-4">
+                {/* TABLE HEADER */}
+                <div
+                  className="
+              grid grid-cols-4
+              px-8 py-7
+              border-b border-border/40
 
+              bg-gradient-to-r
+              from-transparent
+              via-yellow-500/5
+              to-transparent
+            "
+                >
                   <div />
 
-                  <div className="text-center font-semibold">
-                    Ring
+                  <div className="text-center">
+                    <div className="font-semibold text-lg">
+                      Ring
+                    </div>
+
+                    <div className="text-sm text-muted-foreground mt-1">
+                      Personal
+                    </div>
                   </div>
 
-                  <div className="text-center font-semibold">
-                    Keychain
+                  <div className="text-center">
+                    <div className="font-semibold text-lg">
+                      Keychain
+                    </div>
+
+                    <div className="text-sm text-muted-foreground mt-1">
+                      Business
+                    </div>
                   </div>
 
-                  <div className="text-center font-semibold text-yellow-400">
-                    Bracelet
+                  <div className="text-center">
+                    <div
+                      style={{
+                        background:
+                          "linear-gradient(90deg,#D4AF37,#F6E27A,#C89B2C)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                      }}
+                      className="font-bold text-lg"
+                    >
+                      Bracelet
+                    </div>
+
+                    <div className="text-sm text-yellow-600 dark:text-yellow-400 mt-1">
+                      Premium
+                    </div>
                   </div>
                 </div>
 
+                {/* TABLE ROWS */}
                 {[
                   {
                     feature: "Free to Start",
                     ring: true,
                     keychain: true,
-                    bracelet: true,
+                    bracelet: false,
                   },
                   {
                     feature: "Sub-Wallet Control",
@@ -405,15 +455,34 @@ export function MembershipPage() {
                     bracelet: true,
                   },
                 ].map((row, idx) => (
-                  <div
+                  <motion.div
                     key={idx}
-                    className="grid grid-cols-4 gap-4 py-5 border-b border-border/20 last:border-0"
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.06 }}
+                    className="
+                grid grid-cols-4
+                items-center
+
+                px-8 py-6
+
+                border-b border-border/20
+                last:border-0
+
+                hover:bg-black/[0.03]
+                dark:hover:bg-white/[0.03]
+
+                transition-colors duration-300
+              "
                   >
 
-                    <div className="font-medium">
+                    {/* FEATURE */}
+                    <div className="font-medium text-[15px] md:text-base">
                       {row.feature}
                     </div>
 
+                    {/* VALUES */}
                     {[row.ring, row.keychain, row.bracelet].map(
                       (item, i) => (
                         <div
@@ -421,18 +490,40 @@ export function MembershipPage() {
                           className="flex justify-center"
                         >
                           {item ? (
-                            <Check className="w-5 h-5 text-yellow-400" />
+                            <div
+                              className="
+                          w-9 h-9 rounded-full
+                          flex items-center justify-center
+
+                          bg-gradient-to-br
+                          from-yellow-400
+                          via-yellow-500
+                          to-amber-600
+
+                          shadow-[0_0_20px_rgba(255,215,0,0.25)]
+                        "
+                            >
+                              <Check className="w-5 h-5 text-black font-bold" />
+                            </div>
                           ) : (
-                            <div className="w-5 h-[1px] bg-border mt-3" />
+                            <div
+                              className="
+                          w-8 h-[2px]
+                          rounded-full
+
+                          bg-black/20
+                          dark:bg-white/20
+                        "
+                            />
                           )}
                         </div>
                       )
                     )}
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
-          </MetallicCard>
+          </div>
         </div>
       </section>
 

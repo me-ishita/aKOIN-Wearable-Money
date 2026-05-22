@@ -147,8 +147,10 @@ to-[#D4AF37]/22
           `}
         />
 
-        <div className="relative p-6 sm:p-8">{children}</div>
-      </div>
+        <div className="relative z-20 p-6 sm:p-8">
+          {children}
+        </div>
+        </div>
     </motion.div>
   );
 }

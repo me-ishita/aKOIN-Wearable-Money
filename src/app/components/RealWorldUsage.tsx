@@ -2,21 +2,24 @@ import { motion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Check } from "lucide-react";
 
-import groceryImg from "../../assets/grocery-demo.png";
-import airportImg from "../../assets/airport-demo.png";
 import coffeeImg from "../../assets/coffee-demo.png";
 import metroImg from "../../assets/metro-demo.png";
+import accessImg from "../../assets/access-demo.png";
+import resortImg from "../../assets/resort-demo.png";
+
+
 
 const usageScenarios = [
-  {
-    title: "Retail Shopping",
-    description: "Quick, contactless payments at your favorite stores",
-    image: groceryImg,
-  },
+  
   {
     title: "Coffee Shops & Cafes",
     description: "Start your day without reaching for your wallet",
     image: coffeeImg,
+  },
+  {
+    title: "Corporate Access",
+    description: "Unlock Exclusive Access. Track Every Expense.",
+    image: accessImg,
   },
   {
     title: "Transit & Travel",
@@ -24,9 +27,9 @@ const usageScenarios = [
     image: metroImg,
   },
   {
-    title: "Hotels & Airports",
+    title: "Hotels & Resorts",
     description: "Premium experiences with frictionless wearable payments",
-    image: airportImg,
+    image: resortImg,
   },
 ];
 
