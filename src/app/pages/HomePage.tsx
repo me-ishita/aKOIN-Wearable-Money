@@ -15,10 +15,10 @@ export function HomePage() {
   return (
     <>
       <Hero />
+      <Products />
       <HowItWorks />
       <HowItWorksVisual />      
       <UseCases />
-      <Products />    
       <Features />
       <WhyDifferent />
       <RealWorldUsage />  
