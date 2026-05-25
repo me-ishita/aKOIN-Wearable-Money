@@ -5,12 +5,16 @@ import {
   Phone,
   MapPin,
   Send,
+  CheckCircle2, AlertCircle
 } from "lucide-react";
 
 import { MetallicCard } from "../components/MetallicCard";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Button } from "../components/ui/button";
+import { useState } from "react";
+
+
 
 const contactMethods = [
   {
@@ -50,6 +54,101 @@ const faqs = [
 ];
 
 export function ContactPage() {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    wearable: "",
+    message: "",
+  });
+
+  type Status = "idle" | "submitting" | "success" | "error";
+
+  const [status, setStatus] = useState<Status>("idle");
+
+  const [errors, setErrors] = useState({ email: "", phone: "" });
+
+  const validate = () => {
+    let valid = true;
+    let newErrors = { email: "", phone: "" };
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Enter a valid email";
+      valid = false;
+    }
+
+    // Phone validation (10 digits only)
+    const phoneRegex = /^[0-9]{10}$/;
+    if (formData.phone && !phoneRegex.test(formData.phone)) {
+      newErrors.phone = "Phone must be 10 digits";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
+  };
+
+  const handleChange = (e: any) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+
+    if (status === "success" || status === "error") {
+      setStatus("idle");
+    }
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    if (!validate()) return;
+
+    try {
+      setStatus("submitting");
+
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbydcAMb1Iu7uUjVoVCPAiKICGH4VngR7c0BQQ2TvxUCV7sf8j4JvC0yOhjA0B6SEQzKqg/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
+          body: JSON.stringify(formData) // ✅ JSON send
+        }
+      );
+
+      const text = await response.text();
+      console.log("API RESPONSE:", text);
+
+      const data = JSON.parse(text);
+
+      if (data.success) {
+        setStatus("success");
+
+        setFormData({
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          wearable: "",
+          message: "",
+        });
+      } else {
+        console.error(data.error);
+        setStatus("error");
+      }
+
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  };
+
   return (
     <div className="relative overflow-hidden bg-background pt-28">
 
@@ -171,25 +270,24 @@ export function ContactPage() {
             >
               <div
                 className="
-    rounded-[32px]
-    border border-border/50
-    overflow-hidden
+      rounded-[32px]
+      border border-border/50
+      overflow-hidden
 
-    bg-gradient-to-br
+      bg-gradient-to-br
+      from-[#f8f8f8]
+      via-[#efefef]
+      to-[#dddddd]
 
-    from-[#f8f8f8]
-    via-[#efefef]
-    to-[#dddddd]
+      dark:from-[#101216]
+      dark:via-[#171a20]
+      dark:to-[#1f242b]
 
-    dark:from-[#101216]
-    dark:via-[#171a20]
-    dark:to-[#1f242b]
+      shadow-[0_10px_50px_rgba(0,0,0,0.08)]
+      dark:shadow-[0_10px_50px_rgba(0,0,0,0.5)]
 
-    shadow-[0_10px_50px_rgba(0,0,0,0.08)]
-    dark:shadow-[0_10px_50px_rgba(0,0,0,0.5)]
-
-    backdrop-blur-xl
-  "
+      backdrop-blur-xl
+    "
               >
                 <div className="p-8 sm:p-10">
 
@@ -203,84 +301,139 @@ export function ContactPage() {
                     </p>
                   </div>
 
-                  <form className="space-y-5">
+                  <form onSubmit={handleSubmit} className="space-y-5">
 
+                    {/* NAME + COMPANY */}
                     <div className="grid sm:grid-cols-2 gap-4">
-                      <Input
-                        placeholder="Full Name"
-                        className="h-12 bg-background/50 border-border/60"
-                      />
+                      <div>
+                        <Input
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Full Name"
+                          className="h-12 bg-background/50 border-border/60"
+                          required
+                        />
+                      </div>
 
-                      <Input
-                        placeholder="Company Name"
-                        className="h-12 bg-background/50 border-border/60"
-                      />
+                      <div>
+                        <Input
+                          name="company"
+                          value={formData.company}
+                          onChange={handleChange}
+                          placeholder="Company Name"
+                          className="h-12 bg-background/50 border-border/60"
+                        />
+                      </div>
                     </div>
 
-                    <Input
-                      type="email"
-                      placeholder="Work Email"
-                      className="h-12 bg-background/50 border-border/60"
-                    />
+                    {/* EMAIL */}
+                    <div>
+                      <Input
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Work Email"
+                        className="h-12 bg-background/50 border-border/60"
+                        required
+                      />
+                      {errors.email && (
+                        <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                      )}
+                    </div>
 
-                    <Input
-                      type="tel"
-                      placeholder="Phone Number (Optional)"
-                      className="h-12 bg-background/50 border-border/60"
-                    />
+                    {/* PHONE */}
+                    <div>
+                      <Input
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="Phone Number (10 digits)"
+                        className="h-12 bg-background/50 border-border/60"
+                      />
+                      {errors.phone && (
+                        <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                      )}
+                    </div>
 
+                    {/* SELECT */}
                     <select
+                      name="wearable"
+                      value={formData.wearable}
+                      onChange={handleChange}
                       className="
-    w-full h-12 rounded-md
-    border border-border/60
-    bg-background/50
-    px-3 text-sm
-    text-foreground
-    outline-none
-
-    focus:ring-2
-    focus:ring-primary/20
-    transition-all
-  "
-                      defaultValue=""
+            w-full h-12 rounded-md
+            border border-border/60
+            bg-background/50
+            px-3 text-sm
+            text-foreground
+            outline-none
+            focus:ring-2
+            focus:ring-primary/20
+            transition-all
+          "
+                      required
                     >
                       <option value="" disabled>
                         Choose Your Wearable
                       </option>
-
-                      <option value="ring">
-                        Ring
-                      </option>
-
-                      <option value="keychain">
-                        Keychain
-                      </option>
-
-                      <option value="bracelet">
-                        Bracelet
-                      </option>
+                      <option value="ring">Ring</option>
+                      <option value="keychain">Keychain</option>
+                      <option value="bracelet">Bracelet</option>
                     </select>
 
+                    {/* MESSAGE */}
                     <Textarea
-                      rows={8}
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={6}
                       placeholder="How can we help? Tell us about your project or use case..."
                       className="
-    min-h-[120px]
-    bg-background/50
-    border-border/60
-    resize-none
-    py-4
-  "
+            min-h-[120px]
+            bg-background/50
+            border-border/60
+            resize-none
+            py-4
+          "
+                      required
                     />
 
-                    <Button size="lg" className="w-full h-12 text-base">
-                      <Send className="mr-2 h-6 w-4" />
-                      Submit Inquiry
+                    {/* BUTTON */}
+                    <Button
+                      type="submit"
+                      size="lg"
+                      disabled={status === "submitting"}
+                      className="w-full h-12 text-base"
+                    >
+                      {status === "submitting" ? "Submitting..." : (
+                        <>
+                          <Send className="mr-2 h-5 w-5" />
+                          Submit Inquiry
+                        </>
+                      )}
                     </Button>
+                    {status === "success" && (
+                      <div className="flex items-start gap-2 text-green-600 text-sm mt-3">
+                        <CheckCircle2 className="w-4 h-4 mt-0.5" />
+                        <p>Submitted successfully! We'll get back to you soon.</p>
+                      </div>
+                    )}
+
+                    {status === "error" && (
+                      <div className="flex items-start gap-2 text-red-500 text-sm mt-3">
+                        <AlertCircle className="w-4 h-4 mt-0.5" />
+                        <p>Something went wrong. Please try again.</p>
+                      </div>
+                    )}
+
                   </form>
                 </div>
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
